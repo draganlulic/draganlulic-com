@@ -93,8 +93,8 @@ const certificates = [
     name: "Introduction to Generative AI",
     issuer: "Google Cloud",
     logo: "/certificates/google.png",
-    logoWidth: 1080,
-    logoHeight: 1080,
+    logoWidth: 200,
+    logoHeight: 200,
     date: "2023-06-12",
     url: "https://www.skills.google/public_profiles/5a0f77c6-e9bf-4e9f-a05d-fa7de3b0a9e3/badges/3950457",
   },
@@ -102,16 +102,16 @@ const certificates = [
     name: "DELE B1 Spanish Certification",
     issuer: "Instituto Cervantes",
     logo: "/certificates/instituto-cervantes.png",
-    logoWidth: 780,
-    logoHeight: 862,
+    logoWidth: 181,
+    logoHeight: 200,
     date: "2026-02-26",
   },
   {
     name: "Technical SEO Certification",
     issuer: "BlueArray Academy",
     logo: "/certificates/bluearray.png",
-    logoWidth: 905,
-    logoHeight: 318,
+    logoWidth: 569,
+    logoHeight: 200,
     date: "2023-12-01",
     url: "https://www.bluearrayacademy.com/certificates/bd3qfrb5gi",
   },
@@ -119,8 +119,8 @@ const certificates = [
     name: "Technical SEO Course",
     issuer: "CXL Institute",
     logo: "/certificates/cxl.png",
-    logoWidth: 1024,
-    logoHeight: 1024,
+    logoWidth: 200,
+    logoHeight: 200,
     date: "2021-03-01",
   },
 ];
@@ -299,10 +299,10 @@ const jsonLd = [
       <h2 class="text-3xl sm:text-4xl">Results from real client work</h2>
       <!-- Mobile: horizontal scroll-snap carousel (no JS). Desktop: 3-column grid. -->
       <div class="results-track mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
-        {results.map((r) => (
+        {results.map((r, i) => (
           <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
             <div class="flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44">
-              <img src={r.image} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading="lazy" decoding="async" class="h-full w-full rounded object-contain" />
+              <img src={r.image} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} decoding="async" class="h-full w-full rounded object-contain" />
             </div>
             <div class="flex flex-1 flex-col p-7">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>
