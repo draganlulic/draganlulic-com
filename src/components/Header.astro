@@ -1,0 +1,40 @@
+---
+const links = [
+  { href: "/#results", label: "Results" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#testimonials", label: "Testimonials" },
+];
+---
+
+<header class="border-b border-line bg-paper/90 backdrop-blur">
+  <div class="container-wide flex h-16 items-center justify-between">
+    <a href="/" class="flex items-center gap-3" aria-label="Dragan Lulić, home">
+      <img src="/logo-mark.png" alt="" width="36" height="36" class="h-9 w-9" />
+      <span class="text-sm font-extrabold uppercase leading-none tracking-tight">
+        Dragan Lulić
+      </span>
+    </a>
+
+    <nav aria-label="Main">
+      <ul class="flex items-center gap-6 text-sm font-medium text-muted">
+        {links.map((l) => (
+          <li class="hidden sm:block"><a href={l.href} class="hover:text-ink">{l.label}</a></li>
+        ))}
+        <li>
+          <a
+            href="https://www.linkedin.com/in/draganlulic/"
+            rel="me noopener"
+            target="_blank"
+            aria-label="Dragan Lulić on LinkedIn"
+            class="flex h-8 w-8 items-center justify-center rounded-full border border-line text-muted hover:border-ink hover:text-ink"
+          >
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+            </svg>
+          </a>
+        </li>
+        <li><a href="/#contact" class="btn btn-primary !py-2">Get in touch</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

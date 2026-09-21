@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #130892;
+  --color-brand-dark: #0d0666;
+  --color-ink: #0b0b14;
+  --color-muted: #5b5f73;
+  --color-line: #e4e4ea;
+  --color-paper: #fafaf8;
+  --color-paper-2: #f2f2f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  font-feature-settings: "cv11", "ss01", "ss03";
+}
+
+h1, h2, h3 {
+  @apply font-extrabold tracking-tight text-ink;
+  text-wrap: balance;
+}
+
+.container-narrow { @apply mx-auto w-full max-w-3xl px-5 sm:px-8; }
+.container-wide   { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.18em] text-brand;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition-colors;
+}
+.btn-primary { @apply bg-brand text-white hover:bg-brand-dark; }
+.btn-secondary { @apply border border-line bg-white text-ink hover:border-ink; }
+.btn-on-dark { @apply bg-white text-brand hover:bg-paper-2; }
+
+.link {
+  @apply font-semibold text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand;
+}
+
+.stat-number {
+  @apply text-5xl font-extrabold tracking-tighter text-brand;
+  font-variant-numeric: tabular-nums;
+}
+
+.input {
+  @apply w-full rounded-md border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 focus:border-white focus:outline-none;
+}
+
+.company {
+  @apply inline-flex items-center gap-1 rounded-md bg-brand/8 px-2 py-0.5 font-semibold text-brand transition-colors hover:bg-brand hover:text-white;
+}
+.company span { @apply text-xs; }
+
+.results-track { scrollbar-width: none; }
+.results-track::-webkit-scrollbar { display: none; }

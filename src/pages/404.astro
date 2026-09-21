@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Page not found | Dragan Lulić";
+const description = "The page you're looking for doesn't exist or has moved.";
+---
+
+<Base title={title} description={description}>
+  <section class="border-b border-line">
+    <div class="container-wide flex min-h-[50vh] flex-col items-start justify-center py-20">
+      <p class="eyebrow mb-3">404</p>
+      <h1 class="text-4xl leading-[1.05] sm:text-5xl">Page not found</h1>
+      <p class="mt-6 max-w-md text-lg leading-relaxed text-muted">
+        The page you're looking for doesn't exist or has moved. Try the homepage instead.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="/" class="btn btn-primary">Back to homepage</a>
+        <a href="/#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+  </section>
+</Base>

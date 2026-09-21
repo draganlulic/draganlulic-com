@@ -1,0 +1,426 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Dragan Lulić | Senior SEO & AI Search Consultant";
+const description =
+  "Senior SEO and AI search (AEO/GEO) consultant with 8 years of experience growing organic traffic for SaaS, e-commerce and iGaming brands. Case studies, experience and client reviews.";
+
+const results = [
+  {
+    tag: "iGaming · SEO growth",
+    number: "9x",
+    heading: "Organic traffic growth in 15 months",
+    text: "Rebuilt site architecture and resolved critical crawl budget issues across a multi-market affiliate portfolio, growing organic traffic from under 35K to over 320K monthly visits.",
+    image: "/results/igaming-9x-organic-traffic.webp",
+    alt: "Ahrefs organic traffic chart rising from under 35K to over 320K monthly visits between 2023 and 2025",
+    href: "/case-studies/igaming-affiliate-9x-organic-growth/",
+  },
+  {
+    tag: "E-commerce · AI search visibility",
+    number: "1,000+",
+    heading: "AI mentions & 500+ cited pages across LLMs",
+    text: "Optimized product and collection pages to drive consistent mentions across ChatGPT, Google AI Overviews, and Gemini. Milestone reached over ~1 year working with this client.",
+    image: "/results/ai-search-visibility.webp",
+    alt: "AI search visibility report: 1K mentions and 563 cited pages across ChatGPT, Google AI Overviews, AI Mode and Gemini",
+    href: "/case-studies/ecommerce-ai-search-visibility/",
+  },
+  {
+    tag: "SaaS · Migration & redesign",
+    number: "+50%",
+    heading: "Organic traffic increase during website migration",
+    text: "Mapped search intent across all page templates to capture new traffic while mitigating migration risks, growing organic traffic from around 6K to over 10K monthly visits.",
+    image: "/results/saas-redesign-50-organic-growth.webp",
+    alt: "Ahrefs organic traffic chart jumping from around 6K to 10K monthly visits after the 2022 website redesign",
+    href: "/case-studies/saas-website-redesign-seo/",
+  },
+];
+
+const professional = [
+  {
+    role: "SEO/AEO Consultant",
+    company: "IceWeb",
+    url: "https://iceweb.com/",
+    period: "April 2025 - present",
+    text: "Working primarily with US-based e-commerce clients in a performance and ROI-driven environment. Driving organic growth through traditional SEO, AEO and GEO strategies, tying search efforts directly to revenue and user acquisition across both traditional and AI-powered search. Leading technical, semantic and link-focused audits with ownership from analysis to implementation, plus client communication and strategy presentation.",
+  },
+  {
+    role: "SEO Team Lead, promoted from SEO Manager",
+    company: "Gentoo Media",
+    url: "https://www.gentoomedia.com/",
+    period: "January 2023 - April 2025",
+    text: "Joined as SEO Manager and was promoted to Team Lead. Led SEO for large multilingual iGaming affiliate websites, managing SEO specialists and content team members across competitive markets. Contributed to a 9x increase in organic performance over 15 months on one of the largest sites in the portfolio.",
+  },
+  {
+    role: "SaaS SEO Specialist",
+    company: "Infobip",
+    url: "https://www.infobip.com/",
+    period: "July 2022 - January 2023",
+    text: "Played a key role in SEO during a major website redesign at a global SaaS company, improving product discovery and organic user flow. Contributed to a 50% increase in organic growth within four months.",
+  },
+  {
+    role: "SEO Specialist",
+    company: "Smartpoint Adria",
+    url: "https://www.smartpoint.rs/",
+    period: "April 2021 - July 2022",
+    text: "Owned SEO strategy and execution across multiple client accounts, driving growth through technical, on-page, off-page and local SEO. Key point of contact for clients, coordinating developers and content teams, managing roadmaps and delivering consistent traffic and keyword visibility gains despite frequent algorithm updates.",
+  },
+  {
+    role: "SEO Specialist, promoted from Content Manager",
+    company: "Executive Digital",
+    url: "https://executive-digital.com/",
+    period: "February 2019 - April 2021",
+    text: "Started as Content Specialist, promoted to Content Manager and then to SEO Specialist. Supported multiple client accounts across SEO and content: audits, on-page optimization, reporting and content planning. Owned content coordination and cross-team alignment, turning strategy into actionable deliverables and measurable organic improvements.",
+  },
+];
+
+const certificates = [
+  {
+    name: "Claude 101",
+    issuer: "Anthropic",
+    logo: "/certificates/anthropic.svg",
+    date: "2026-06-23",
+    url: "https://verify.skilljar.com/c/d9pdjsaxppov",
+  },
+  {
+    name: "Introduction to Generative AI",
+    issuer: "Google Cloud",
+    logo: "/certificates/google.png",
+    date: "2023-06-12",
+    url: "https://www.skills.google/public_profiles/5a0f77c6-e9bf-4e9f-a05d-fa7de3b0a9e3/badges/3950457",
+  },
+  {
+    name: "DELE B1 Spanish Certification",
+    issuer: "Instituto Cervantes",
+    logo: "/certificates/instituto-cervantes.png",
+    date: "2026-02-26",
+  },
+  {
+    name: "Technical SEO Certification",
+    issuer: "BlueArray Academy",
+    logo: "/certificates/bluearray.png",
+    date: "2023-12-01",
+    url: "https://www.bluearrayacademy.com/certificates/bd3qfrb5gi",
+  },
+  {
+    name: "Technical SEO Course",
+    issuer: "CXL Institute",
+    logo: "/certificates/cxl.png",
+    date: "2021-03-01",
+  },
+];
+
+const freelance = [
+  {
+    role: "SEO and Organic Growth Consultant",
+    company: "PeoplePerHour",
+    url: "https://pph.me/draganlulic",
+    period: "July 2020 - present",
+    text: "Managing SEO projects for small businesses and site owners to improve organic visibility through focused SEO and growth-oriented audits with clear, actionable recommendations. Consistent performance improvements and a perfect 5-star client satisfaction rating.",
+  },
+  {
+    role: "SEO Consultant",
+    company: "Kupakia",
+    url: "https://www.kupakia.com/",
+    period: "November 2020 - August 2021",
+    text: "Collaborated with a Spain-based agency and Spanish-speaking clients on technical audits and on-page optimization. Delivered practical fixes and workflow improvements that increased traffic and overall site performance.",
+  },
+];
+
+// NOTE: Berak and Rafa quotes are drafts — get their sign-off (or their edits)
+// before this goes live. Gojko's quote is his own words, verbatim.
+const testimonials = [
+  {
+    quote: "Dragan was a key part of the team behind our biggest organic growth win, the 9x traffic increase. He has a great mind for SEO strategy, sharp on architecture and priorities, and he's easy to work with.",
+    name: "Dragan Berak",
+    roles: [
+      { title: "Head of SEO", company: "Gentoo Media", url: "https://www.gentoomedia.com/" },
+      { title: "Founder", company: "DBerak Consulting", url: "https://dberak.com/" },
+    ],
+  },
+  {
+    quote: "Got lots of useful insights from the audit, and Dragan was great with following up on the details and queries.",
+    name: "Gojko Adžić",
+    roles: [{ title: "Founder", company: "Narakeet", url: "https://www.narakeet.com/" }],
+  },
+  {
+    quote: "We brought Dragan in to work directly with our Spanish-speaking clients on technical audits, and it was a smooth fit from day one despite the language gap. Clear fixes, clear communication, and results our clients actually noticed.",
+    name: "Rafa Sospedra",
+    roles: [{ title: "Consultor SEO y Experto en IA", company: "Kupakia", url: "https://www.kupakia.com/" }],
+  },
+  {
+    quote: "Great work, just what I needed, very proactive and delivered on time. This was the second project Dragan did for us and it was again excellent work, delivered on time, with prompt communication managing the project. I highly recommend Dragan and would definitely work with him again.",
+    name: "Paul Longhurst",
+    roles: [{ title: "Client", company: "PeoplePerHour", url: "https://pph.me/draganlulic" }],
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://draganlulic.com/#website",
+    url: "https://draganlulic.com/",
+    name: "Dragan Lulić",
+    publisher: { "@id": "https://draganlulic.com/#person" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://draganlulic.com/#profilepage",
+    url: "https://draganlulic.com/",
+    name: title,
+    description,
+    mainEntity: { "@id": "https://draganlulic.com/#person" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://draganlulic.com/#person",
+    name: "Dragan Lulić",
+    url: "https://draganlulic.com/",
+    jobTitle: "Senior SEO & AI Search Consultant",
+    description:
+      "Senior SEO consultant specialising in technical SEO and AI search optimization (AEO/GEO) for SaaS, e-commerce and iGaming.",
+    email: "mailto:contact@draganlulic.com",
+    address: { "@type": "PostalAddress", addressCountry: "RS" },
+    worksFor: { "@id": "https://draganlulic.com/#sitioenonda" },
+    hasCredential: certificates.map((c) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: c.name,
+      credentialCategory: "certificate",
+      dateCreated: c.date,
+      recognizedBy: { "@type": "Organization", name: c.issuer },
+      ...(c.url ? { url: c.url } : {}),
+    })),
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University Business Academy in Novi Sad",
+    },
+    knowsLanguage: [
+      { "@type": "Language", name: "Serbian", alternateName: "sr" },
+      { "@type": "Language", name: "English", alternateName: "en" },
+      { "@type": "Language", name: "Spanish", alternateName: "es" },
+    ],
+    knowsAbout: [
+      "Technical SEO",
+      "AI Search Optimization",
+      "Answer Engine Optimization",
+      "Generative Engine Optimization",
+      "Site Migrations",
+      "International SEO",
+      "Content Strategy",
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/draganlulic/",
+      "https://pph.me/draganlulic",
+      "https://kosnica.net/b/dragan-lulic-seo-consultant-ONO0GApTOA6fEadzEU4Z",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://draganlulic.com/#sitioenonda",
+    name: "Sitio en Onda",
+    url: "https://sitioenonda.com/",
+    sameAs: ["https://www.instagram.com/sitioenonda/"],
+    founder: { "@id": "https://draganlulic.com/#person" },
+  },
+];
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="border-b border-line">
+    <div class="container-wide pt-14 pb-8 md:pt-20 md:pb-8">
+      <div>
+        <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-sm font-medium text-ink">
+          <span class="h-2 w-2 rounded-full bg-green-500" aria-hidden="true"></span>
+          Available as a worldwide contractor (US, UK, EU)
+        </p>
+        <h1 class="text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
+          Dragan Lulić: Senior SEO &amp; AI Search Consultant
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-muted sm:text-xl">
+          For the past 8+ years, I've been helping SaaS, e-commerce, iGaming and other brands grow their organic presence across Google and AI search engines like ChatGPT and Gemini. I combine traditional SEO with AEO and GEO strategies to turn that visibility into actual revenue. I'm known for bringing clarity to complex problems and turning strategy into practical, actionable steps.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
+          <a href="#results" class="btn btn-secondary">See results</a>
+          <a href="/dragan-lulic-cv.pdf" class="btn btn-secondary">Download CV</a>
+        </div>
+        <dl class="mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+          <div class="flex flex-col-reverse justify-end">
+            <dt class="mt-2 text-sm text-muted">Years of Experience</dt>
+            <dd class="text-4xl font-extrabold tracking-tighter text-brand sm:text-5xl">8+</dd>
+          </div>
+          <div class="flex flex-col-reverse justify-end">
+            <dt class="mt-2 text-sm text-muted">Clients &amp; Projects</dt>
+            <dd class="text-4xl font-extrabold tracking-tighter text-brand sm:text-5xl">50+</dd>
+          </div>
+          <div class="flex flex-col-reverse justify-end">
+            <dt class="mt-2 text-sm text-muted">Rating on PeoplePerHour</dt>
+            <dd class="inline-flex items-center whitespace-nowrap text-4xl font-extrabold tracking-tighter text-brand sm:text-5xl">5.0<svg aria-hidden="true" class="ml-1 h-[0.9em] w-[0.9em] fill-[#F5B301]" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.3l-6 3.3 1.3-6.6L2.4 9.4l6.7-.8z"/></svg></dd>
+          </div>
+          <div class="flex flex-col-reverse justify-end">
+            <dt class="mt-2 text-sm text-muted">Languages Worked In (EN, ES, SR)</dt>
+            <dd class="text-4xl font-extrabold tracking-tighter text-brand sm:text-5xl">3</dd>
+          </div>
+          <div class="flex flex-col-reverse justify-end">
+            <dt class="mt-2 text-sm text-muted">Remote &amp; Async Ready</dt>
+            <dd class="text-4xl font-extrabold tracking-tighter text-brand sm:text-5xl">100%</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section id="results" class="scroll-mt-16 border-b border-line py-12 md:py-16">
+    <div class="container-wide">
+      <p class="eyebrow mb-3">Case studies</p>
+      <h2 class="text-3xl sm:text-4xl">Results from real client work</h2>
+      <!-- Mobile: horizontal scroll-snap carousel (no JS). Desktop: 3-column grid. -->
+      <div class="results-track mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
+        {results.map((r) => (
+          <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
+            <div class="flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44">
+              <img src={r.image} alt={r.alt} loading="lazy" decoding="async" class="h-full w-full rounded object-contain" />
+            </div>
+            <div class="flex flex-1 flex-col p-7">
+              <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>
+              <p class="stat-number mt-4">{r.number}</p>
+              <h3 class="mt-3 text-xl leading-snug">{r.heading}</h3>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-muted">{r.text}</p>
+              {/* Enable when the case study pages are written: */}
+              {/* <a href={r.href} class="link mt-6 text-sm">Read the case study</a> */}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="scroll-mt-16 border-b border-line py-12 md:py-16">
+    <div class="container-wide grid gap-12 md:grid-cols-[1fr_2fr] md:grid-rows-[auto_1fr] md:gap-x-12 md:gap-y-14">
+      <div class="md:col-start-1 md:row-start-1">
+        <p class="eyebrow mb-3">Career</p>
+        <h2 class="text-3xl sm:text-4xl">Experience</h2>
+        <p class="mt-4 text-muted">Agency and in-house, local and international teams, across SaaS, e-commerce and iGaming.</p>
+        <a href="/dragan-lulic-cv.pdf" class="link mt-6 inline-block text-sm">Download CV (PDF)</a>
+      </div>
+
+      <div class="md:col-start-2 md:row-start-1 md:row-span-2">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-muted md:mt-1">Professional</p>
+        <ol class="relative mt-6 border-l border-line pl-8">
+          {professional.map((e) => (
+            <li class="relative pb-12 last:pb-0">
+              <span class="absolute -left-[37px] top-1.5 h-4 w-4 rounded-full border-4 border-paper bg-brand" aria-hidden="true"></span>
+              <h3 class="text-xl">{e.role}</h3>
+              <p class="mt-1.5 flex flex-wrap items-center gap-x-2 text-sm">
+                <a href={e.url} target="_blank" rel="noopener" class="company">{e.company}<span aria-hidden="true">↗</span></a>
+                <span class="text-muted">· {e.period}</span>
+              </p>
+              <p class="mt-3 leading-relaxed text-muted">{e.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="md:col-start-1 md:row-start-2">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-muted">Freelance</p>
+        <ul class="mt-6 space-y-8">
+          {freelance.map((e) => (
+            <li>
+              <h3 class="text-lg">{e.role}</h3>
+              <p class="mt-1.5 flex flex-wrap items-center gap-x-2 text-sm">
+                <a href={e.url} target="_blank" rel="noopener" class="company">{e.company}<span aria-hidden="true">↗</span></a>
+                <span class="text-muted">· {e.period}</span>
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-muted">{e.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="border-b border-line py-10 md:py-14">
+    <div class="container-wide">
+      <p class="eyebrow mb-3">Credentials</p>
+      <h2 class="text-3xl sm:text-4xl">Certifications &amp; courses</h2>
+      <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
+        {certificates.map((c) => (
+          <div class="flex flex-col items-start">
+            <div class="flex h-12 items-center">
+              <img src={c.logo} alt={`${c.issuer} logo`} decoding="async" class="max-h-12 w-auto max-w-[9rem] object-contain" />
+            </div>
+            <p class="mt-3 text-sm font-semibold text-ink">{c.name}</p>
+            <p class="text-sm text-muted">{c.issuer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="scroll-mt-16 border-b border-line py-12 md:py-16">
+    <div class="container-wide">
+      <p class="eyebrow mb-3">Reviews</p>
+      <h2 class="text-3xl sm:text-4xl">What clients and colleagues say</h2>
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        {testimonials.map((t) => (
+          <blockquote class="flex flex-col rounded-lg border border-line bg-white p-7">
+            <p class="flex-1 text-lg leading-relaxed">“{t.quote}”</p>
+            <footer class="mt-6 text-sm">
+              <span class="font-semibold">{t.name}</span>
+              <span class="block text-muted">
+                {t.roles.map((r, i) => (
+                  <>
+                    {i > 0 && " & "}
+                    {r.title}, <a href={r.url} target="_blank" rel="noopener" class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand">{r.company}</a>
+                  </>
+                ))}
+              </span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="scroll-mt-16 bg-brand py-14 text-white md:py-20">
+    <div class="container-wide grid gap-12 md:grid-cols-[1fr_1fr]">
+      <div>
+        <p class="eyebrow mb-3 !text-white/70">Contact</p>
+        <h2 class="text-3xl !text-white sm:text-4xl">Let's work together</h2>
+        <p class="mt-4 max-w-md leading-relaxed text-white/80">
+          Whether you need help with your site or you're hiring for an SEO role, I reply within a day.
+        </p>
+        <ul class="mt-8 space-y-3 text-white/90">
+          <li><a href="mailto:contact@draganlulic.com" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">contact@draganlulic.com</a></li>
+          <li><a href="https://www.linkedin.com/in/draganlulic/" rel="me noopener" target="_blank" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">LinkedIn</a></li>
+          <li><a href="/dragan-lulic-cv.pdf" class="underline decoration-white/40 underline-offset-4 hover:decoration-white">Download CV (PDF)</a></li>
+        </ul>
+      </div>
+      <form action="https://formspree.io/f/mrpbqblp" method="POST" class="grid gap-4">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="New message from draganlulic.com" />
+        <input type="hidden" name="_next" value="https://draganlulic.com/thank-you/" />
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="sr-only" for="name">Your name</label>
+          <input class="input" id="name" name="name" type="text" placeholder="Your name" required />
+          <label class="sr-only" for="email">Your email</label>
+          <input class="input" id="email" name="email" type="email" placeholder="Your email" required />
+        </div>
+        <label class="sr-only" for="website">Your website</label>
+        <input class="input" id="website" name="website" type="url" placeholder="Your website (optional)" />
+        <label class="sr-only" for="message">Message</label>
+        <textarea class="input" id="message" name="message" rows="5" placeholder="What do you need help with?" required></textarea>
+        <button type="submit" class="btn btn-on-dark justify-self-start">Send message</button>
+      </form>
+    </div>
+  </section>
+</Base>
