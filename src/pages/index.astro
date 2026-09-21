@@ -319,7 +319,7 @@ const jsonLd = [
         {results.map((r, i) => (
           <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
             <a href={`#result-${i}`} class="result-trigger flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44" aria-label={`Enlarge: ${r.heading}`}>
-              <img src={r.image} srcset={r.imageSmall ? `${r.imageSmall} 600w, ${r.image} ${r.imageWidth}w` : undefined} sizes={r.imageSmall ? "(min-width: 768px) 33vw, 85vw" : undefined} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} decoding="async" class="h-full w-full rounded object-contain" />
+              <img src={r.image} srcset={r.imageSmall ? `${r.imageSmall} 600w, ${r.image} ${r.imageWidth}w` : undefined} sizes={r.imageSmall ? "(min-width: 1152px) 312px, (min-width: 768px) calc(33vw - 72px), calc(85vw - 68px)" : undefined} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} decoding="async" class="h-full w-full rounded object-contain" />
             </a>
             <div class="flex flex-1 flex-col p-7">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>

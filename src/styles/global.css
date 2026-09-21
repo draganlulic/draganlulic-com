@@ -1,5 +1,14 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
+
+/* Self-hosted Inter subset: Latin + Serbian Latin glyphs, wght 400-800, one file (~28KB)
+   instead of Fontsource's latin + latin-ext pair (~131KB). */
+@font-face {
+  font-family: "Inter Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 800;
+  src: url("/fonts/inter-subset.woff2") format("woff2");
+}
 
 @theme {
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
