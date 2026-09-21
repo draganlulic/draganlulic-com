@@ -335,9 +335,9 @@ const jsonLd = [
 
       {results.map((r, i) => (
         <div id={`result-${i}`} class="lightbox" role="dialog" aria-modal="true" aria-label={r.heading}>
-          <a href="#" class="lightbox-backdrop" aria-label="Close"></a>
+          <a href="#!" class="lightbox-backdrop" aria-label="Close"></a>
           <div class="lightbox-inner">
-            <a href="#" class="lightbox-close" aria-label="Close">&times;</a>
+            <a href="#!" class="lightbox-close" aria-label="Close">&times;</a>
             <img src={r.image} alt={r.alt} loading="lazy" decoding="async" />
           </div>
         </div>
@@ -408,9 +408,9 @@ const jsonLd = [
       </div>
       {certificates.map((c, i) => (
         <div id={`cert-${i}`} class="lightbox" role="dialog" aria-modal="true" aria-label={`${c.name} certificate`}>
-          <a href="#" class="lightbox-backdrop" aria-label="Close"></a>
+          <a href="#!" class="lightbox-backdrop" aria-label="Close"></a>
           <div class="lightbox-inner">
-            <a href="#" class="lightbox-close" aria-label="Close">&times;</a>
+            <a href="#!" class="lightbox-close" aria-label="Close">&times;</a>
             <img src={c.certImage} alt={`${c.name} certificate`} width={c.certImageWidth} height={c.certImageHeight} loading="lazy" decoding="async" />
           </div>
         </div>
