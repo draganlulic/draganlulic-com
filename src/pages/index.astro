@@ -86,6 +86,9 @@ const certificates = [
     logo: "/certificates/anthropic.svg",
     logoWidth: 150,
     logoHeight: 150,
+    certImage: "/certificates/cert-anthropic.png",
+    certImageWidth: 1200,
+    certImageHeight: 927,
     date: "2026-06-23",
     url: "https://verify.skilljar.com/c/d9pdjsaxppov",
   },
@@ -95,6 +98,9 @@ const certificates = [
     logo: "/certificates/google.png",
     logoWidth: 200,
     logoHeight: 200,
+    certImage: "/certificates/cert-google.png",
+    certImageWidth: 1000,
+    certImageHeight: 909,
     date: "2023-06-12",
     url: "https://www.skills.google/public_profiles/5a0f77c6-e9bf-4e9f-a05d-fa7de3b0a9e3/badges/3950457",
   },
@@ -104,6 +110,9 @@ const certificates = [
     logo: "/certificates/instituto-cervantes.png",
     logoWidth: 181,
     logoHeight: 200,
+    certImage: "/certificates/cert-instituto-cervantes.png",
+    certImageWidth: 1200,
+    certImageHeight: 849,
     date: "2026-02-26",
   },
   {
@@ -112,6 +121,9 @@ const certificates = [
     logo: "/certificates/bluearray.png",
     logoWidth: 569,
     logoHeight: 200,
+    certImage: "/certificates/cert-bluearray.png",
+    certImageWidth: 1200,
+    certImageHeight: 848,
     date: "2023-12-01",
     url: "https://www.bluearrayacademy.com/certificates/bd3qfrb5gi",
   },
@@ -121,6 +133,9 @@ const certificates = [
     logo: "/certificates/cxl.png",
     logoWidth: 200,
     logoHeight: 200,
+    certImage: "/certificates/cert-cxl.png",
+    certImageWidth: 1200,
+    certImageHeight: 927,
     date: "2021-03-01",
   },
 ];
@@ -156,11 +171,6 @@ const testimonials = [
     ],
   },
   {
-    quote: "Got lots of useful insights from the audit, and Dragan was great with following up on the details and queries.",
-    name: "Gojko Adžić",
-    roles: [{ title: "Founder", company: "Narakeet", url: "https://www.narakeet.com/" }],
-  },
-  {
     quote: "We brought Dragan in to work directly with our Spanish-speaking clients on technical audits, and it was a smooth fit from day one despite the language gap. Clear fixes, clear communication, and results our clients actually noticed.",
     name: "Rafa Sospedra",
     roles: [{ title: "Consultor SEO y Experto en IA", company: "Kupakia", url: "https://www.kupakia.com/" }],
@@ -169,6 +179,11 @@ const testimonials = [
     quote: "Great work, just what I needed, very proactive and delivered on time. This was the second project Dragan did for us and it was again excellent work, delivered on time, with prompt communication managing the project. I highly recommend Dragan and would definitely work with him again.",
     name: "Paul Longhurst",
     roles: [{ title: "Client", company: "PeoplePerHour", url: "https://pph.me/draganlulic", nofollow: false }],
+  },
+  {
+    quote: "Got lots of useful insights from the audit, and Dragan was great with following up on the details and queries.",
+    name: "Gojko Adžić",
+    roles: [{ title: "Founder", company: "Narakeet", url: "https://www.narakeet.com/" }],
   },
 ];
 
@@ -379,16 +394,25 @@ const jsonLd = [
       <p class="eyebrow mb-3">Credentials</p>
       <h2 class="text-3xl sm:text-4xl">Certifications &amp; courses</h2>
       <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
-        {certificates.map((c) => (
+        {certificates.map((c, i) => (
           <div class="flex flex-col items-start">
-            <div class="flex h-12 items-center">
+            <a href={`#cert-${i}`} class="result-trigger flex h-12 items-center" aria-label={`Enlarge: ${c.name} certificate`}>
               <img src={c.logo} alt={`${c.issuer} logo`} width={c.logoWidth} height={c.logoHeight} loading="lazy" decoding="async" class="max-h-12 w-auto max-w-[9rem] object-contain" />
-            </div>
+            </a>
             <p class="mt-3 text-sm font-semibold text-ink">{c.name}</p>
             <p class="text-sm text-muted">{c.issuer}</p>
           </div>
         ))}
       </div>
+      {certificates.map((c, i) => (
+        <div id={`cert-${i}`} class="lightbox" role="dialog" aria-modal="true" aria-label={`${c.name} certificate`}>
+          <a href="#" class="lightbox-backdrop" aria-label="Close"></a>
+          <div class="lightbox-inner">
+            <a href="#" class="lightbox-close" aria-label="Close">&times;</a>
+            <img src={c.certImage} alt={`${c.name} certificate`} width={c.certImageWidth} height={c.certImageHeight} loading="lazy" decoding="async" />
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
