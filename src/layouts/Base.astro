@@ -28,13 +28,18 @@ const ogUrl = new URL(ogImage, Astro.site);
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#130892" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3RM3EZ1XE"></script>
+    <!-- Google tag (gtag.js), deferred until after load so it never competes with LCP -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-C3RM3EZ1XE');
+      window.addEventListener('load', function () {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C3RM3EZ1XE';
+        document.head.appendChild(s);
+      });
     </script>
 
     <meta property="og:type" content="website" />

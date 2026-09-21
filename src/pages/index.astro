@@ -12,6 +12,7 @@ const results = [
     heading: "Organic traffic growth in 15 months",
     text: "Rebuilt site architecture and resolved critical crawl budget issues across a multi-market affiliate portfolio, growing organic traffic from under 35K to over 320K monthly visits.",
     image: "/results/igaming-9x-organic-traffic.webp",
+    imageSmall: "/results/igaming-9x-organic-traffic-sm.webp",
     imageWidth: 1046,
     imageHeight: 290,
     alt: "Ahrefs organic traffic chart rising from under 35K to over 320K monthly visits between 2023 and 2025",
@@ -34,6 +35,7 @@ const results = [
     heading: "Organic traffic increase during website migration",
     text: "Mapped search intent across all page templates to capture new traffic while mitigating migration risks, growing organic traffic from around 6K to over 10K monthly visits.",
     image: "/results/saas-redesign-50-organic-growth.webp",
+    imageSmall: "/results/saas-redesign-50-organic-growth-sm.webp",
     imageWidth: 1046,
     imageHeight: 272,
     alt: "Ahrefs organic traffic chart jumping from around 6K to 10K monthly visits after the 2022 website redesign",
@@ -317,7 +319,7 @@ const jsonLd = [
         {results.map((r, i) => (
           <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
             <a href={`#result-${i}`} class="result-trigger flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44" aria-label={`Enlarge: ${r.heading}`}>
-              <img src={r.image} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} decoding="async" class="h-full w-full rounded object-contain" />
+              <img src={r.image} srcset={r.imageSmall ? `${r.imageSmall} 600w, ${r.image} ${r.imageWidth}w` : undefined} sizes={r.imageSmall ? "(min-width: 768px) 33vw, 85vw" : undefined} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} decoding="async" class="h-full w-full rounded object-contain" />
             </a>
             <div class="flex flex-1 flex-col p-7">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>
