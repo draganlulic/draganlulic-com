@@ -1,9 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
 
-const title = "Dragan Lulić | Senior SEO & AI Search Consultant";
+const title = "Dragan Lulić | Senior SEO & AI Search Specialist";
 const description =
-  "Senior SEO and AI search (AEO/GEO) consultant with 8 years of experience growing organic traffic for SaaS, e-commerce and iGaming brands. Case studies, experience and client reviews.";
+  "Senior SEO and AI search (AEO/GEO) specialist with 8 years of experience growing organic traffic for SaaS, e-commerce and iGaming brands. Case studies inside.";
 
 const results = [
   {
@@ -12,6 +12,8 @@ const results = [
     heading: "Organic traffic growth in 15 months",
     text: "Rebuilt site architecture and resolved critical crawl budget issues across a multi-market affiliate portfolio, growing organic traffic from under 35K to over 320K monthly visits.",
     image: "/results/igaming-9x-organic-traffic.webp",
+    imageWidth: 1046,
+    imageHeight: 290,
     alt: "Ahrefs organic traffic chart rising from under 35K to over 320K monthly visits between 2023 and 2025",
     href: "/case-studies/igaming-affiliate-9x-organic-growth/",
   },
@@ -21,6 +23,8 @@ const results = [
     heading: "AI mentions & 500+ cited pages across LLMs",
     text: "Optimized product and collection pages to drive consistent mentions across ChatGPT, Google AI Overviews, and Gemini. Milestone reached over ~1 year working with this client.",
     image: "/results/ai-search-visibility.webp",
+    imageWidth: 446,
+    imageHeight: 261,
     alt: "AI search visibility report: 1K mentions and 563 cited pages across ChatGPT, Google AI Overviews, AI Mode and Gemini",
     href: "/case-studies/ecommerce-ai-search-visibility/",
   },
@@ -30,6 +34,8 @@ const results = [
     heading: "Organic traffic increase during website migration",
     text: "Mapped search intent across all page templates to capture new traffic while mitigating migration risks, growing organic traffic from around 6K to over 10K monthly visits.",
     image: "/results/saas-redesign-50-organic-growth.webp",
+    imageWidth: 1046,
+    imageHeight: 272,
     alt: "Ahrefs organic traffic chart jumping from around 6K to 10K monthly visits after the 2022 website redesign",
     href: "/case-studies/saas-website-redesign-seo/",
   },
@@ -78,6 +84,8 @@ const certificates = [
     name: "Claude 101",
     issuer: "Anthropic",
     logo: "/certificates/anthropic.svg",
+    logoWidth: 150,
+    logoHeight: 150,
     date: "2026-06-23",
     url: "https://verify.skilljar.com/c/d9pdjsaxppov",
   },
@@ -85,6 +93,8 @@ const certificates = [
     name: "Introduction to Generative AI",
     issuer: "Google Cloud",
     logo: "/certificates/google.png",
+    logoWidth: 1080,
+    logoHeight: 1080,
     date: "2023-06-12",
     url: "https://www.skills.google/public_profiles/5a0f77c6-e9bf-4e9f-a05d-fa7de3b0a9e3/badges/3950457",
   },
@@ -92,12 +102,16 @@ const certificates = [
     name: "DELE B1 Spanish Certification",
     issuer: "Instituto Cervantes",
     logo: "/certificates/instituto-cervantes.png",
+    logoWidth: 780,
+    logoHeight: 862,
     date: "2026-02-26",
   },
   {
     name: "Technical SEO Certification",
     issuer: "BlueArray Academy",
     logo: "/certificates/bluearray.png",
+    logoWidth: 905,
+    logoHeight: 318,
     date: "2023-12-01",
     url: "https://www.bluearrayacademy.com/certificates/bd3qfrb5gi",
   },
@@ -105,6 +119,8 @@ const certificates = [
     name: "Technical SEO Course",
     issuer: "CXL Institute",
     logo: "/certificates/cxl.png",
+    logoWidth: 1024,
+    logoHeight: 1024,
     date: "2021-03-01",
   },
 ];
@@ -114,6 +130,7 @@ const freelance = [
     role: "SEO and Organic Growth Consultant",
     company: "PeoplePerHour",
     url: "https://pph.me/draganlulic",
+    nofollow: false,
     period: "July 2020 - present",
     text: "Managing SEO projects for small businesses and site owners to improve organic visibility through focused SEO and growth-oriented audits with clear, actionable recommendations. Consistent performance improvements and a perfect 5-star client satisfaction rating.",
   },
@@ -121,6 +138,7 @@ const freelance = [
     role: "SEO Consultant",
     company: "Kupakia",
     url: "https://www.kupakia.com/",
+    nofollow: true,
     period: "November 2020 - August 2021",
     text: "Collaborated with a Spain-based agency and Spanish-speaking clients on technical audits and on-page optimization. Delivered practical fixes and workflow improvements that increased traffic and overall site performance.",
   },
@@ -150,7 +168,7 @@ const testimonials = [
   {
     quote: "Great work, just what I needed, very proactive and delivered on time. This was the second project Dragan did for us and it was again excellent work, delivered on time, with prompt communication managing the project. I highly recommend Dragan and would definitely work with him again.",
     name: "Paul Longhurst",
-    roles: [{ title: "Client", company: "PeoplePerHour", url: "https://pph.me/draganlulic" }],
+    roles: [{ title: "Client", company: "PeoplePerHour", url: "https://pph.me/draganlulic", nofollow: false }],
   },
 ];
 
@@ -284,7 +302,7 @@ const jsonLd = [
         {results.map((r) => (
           <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
             <div class="flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44">
-              <img src={r.image} alt={r.alt} loading="lazy" decoding="async" class="h-full w-full rounded object-contain" />
+              <img src={r.image} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading="lazy" decoding="async" class="h-full w-full rounded object-contain" />
             </div>
             <div class="flex flex-1 flex-col p-7">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>
@@ -318,7 +336,7 @@ const jsonLd = [
               <span class="absolute -left-[37px] top-1.5 h-4 w-4 rounded-full border-4 border-paper bg-brand" aria-hidden="true"></span>
               <h3 class="text-xl">{e.role}</h3>
               <p class="mt-1.5 flex flex-wrap items-center gap-x-2 text-sm">
-                <a href={e.url} target="_blank" rel="noopener" class="company">{e.company}<span aria-hidden="true">↗</span></a>
+                <a href={e.url} target="_blank" rel="nofollow noopener" class="company">{e.company}<span aria-hidden="true">↗</span></a>
                 <span class="text-muted">· {e.period}</span>
               </p>
               <p class="mt-3 leading-relaxed text-muted">{e.text}</p>
@@ -334,7 +352,7 @@ const jsonLd = [
             <li>
               <h3 class="text-lg">{e.role}</h3>
               <p class="mt-1.5 flex flex-wrap items-center gap-x-2 text-sm">
-                <a href={e.url} target="_blank" rel="noopener" class="company">{e.company}<span aria-hidden="true">↗</span></a>
+                <a href={e.url} target="_blank" rel={e.nofollow ? "nofollow noopener" : "noopener"} class="company">{e.company}<span aria-hidden="true">↗</span></a>
                 <span class="text-muted">· {e.period}</span>
               </p>
               <p class="mt-3 text-sm leading-relaxed text-muted">{e.text}</p>
@@ -354,7 +372,7 @@ const jsonLd = [
         {certificates.map((c) => (
           <div class="flex flex-col items-start">
             <div class="flex h-12 items-center">
-              <img src={c.logo} alt={`${c.issuer} logo`} decoding="async" class="max-h-12 w-auto max-w-[9rem] object-contain" />
+              <img src={c.logo} alt={`${c.issuer} logo`} width={c.logoWidth} height={c.logoHeight} loading="lazy" decoding="async" class="max-h-12 w-auto max-w-[9rem] object-contain" />
             </div>
             <p class="mt-3 text-sm font-semibold text-ink">{c.name}</p>
             <p class="text-sm text-muted">{c.issuer}</p>
@@ -379,7 +397,7 @@ const jsonLd = [
                 {t.roles.map((r, i) => (
                   <>
                     {i > 0 && " & "}
-                    {r.title}, <a href={r.url} target="_blank" rel="noopener" class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand">{r.company}</a>
+                    {r.title}, <a href={r.url} target="_blank" rel={r.nofollow === false ? "noopener" : "nofollow noopener"} class="font-medium text-brand underline decoration-brand/30 underline-offset-4 hover:decoration-brand">{r.company}</a>
                   </>
                 ))}
               </span>
