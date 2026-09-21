@@ -60,3 +60,43 @@ h1, h2, h3 {
 
 .results-track { scrollbar-width: none; }
 .results-track::-webkit-scrollbar { display: none; }
+
+.result-trigger { @apply block cursor-zoom-in; }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  padding: 1.5rem;
+  background: rgb(11 11 20 / 0.92);
+}
+.lightbox:target { display: flex; align-items: center; justify-content: center; }
+.lightbox-backdrop { position: absolute; inset: 0; }
+.lightbox-inner { position: relative; z-index: 1; max-width: min(92vw, 1100px); }
+.lightbox-inner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.5);
+}
+.lightbox-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.12);
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.lightbox-close:hover { background: rgb(255 255 255 / 0.24); }

@@ -301,9 +301,9 @@ const jsonLd = [
       <div class="results-track mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
         {results.map((r, i) => (
           <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
-            <div class="flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44">
+            <a href={`#result-${i}`} class="result-trigger flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44" aria-label={`Enlarge: ${r.heading}`}>
               <img src={r.image} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading={i === 0 ? "eager" : "lazy"} fetchpriority={i === 0 ? "high" : "auto"} decoding="async" class="h-full w-full rounded object-contain" />
-            </div>
+            </a>
             <div class="flex flex-1 flex-col p-7">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>
               <p class="stat-number mt-4">{r.number}</p>
@@ -315,6 +315,16 @@ const jsonLd = [
           </article>
         ))}
       </div>
+
+      {results.map((r, i) => (
+        <div id={`result-${i}`} class="lightbox" role="dialog" aria-modal="true" aria-label={r.heading}>
+          <a href="#" class="lightbox-backdrop" aria-label="Close"></a>
+          <div class="lightbox-inner">
+            <a href="#" class="lightbox-close" aria-label="Close">&times;</a>
+            <img src={r.image} alt={r.alt} loading="lazy" decoding="async" />
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
