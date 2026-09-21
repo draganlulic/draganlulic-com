@@ -28,6 +28,15 @@ const ogUrl = new URL(ogImage, Astro.site);
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#130892" />
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3RM3EZ1XE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C3RM3EZ1XE');
+    </script>
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dragan Lulić" />
     <meta property="og:title" content={title} />
