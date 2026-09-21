@@ -6,6 +6,6 @@ export default defineConfig({
   site: 'https://draganlulic.com',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'always' },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/thank-you/') })],
   vite: { plugins: [tailwindcss()] },
 });

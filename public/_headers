@@ -1,0 +1,32 @@
+# Only HTML pages and the case study charts belong in search results.
+# Everything else is served normally but marked noindex.
+
+/thank-you/
+  X-Robots-Tag: noindex
+
+/sitemap-index.xml
+  X-Robots-Tag: noindex
+
+/sitemap-0.xml
+  X-Robots-Tag: noindex
+
+/dragan-lulic-cv.pdf
+  X-Robots-Tag: noindex
+
+/certificates/*
+  X-Robots-Tag: noindex
+
+/fonts/*
+  X-Robots-Tag: noindex
+
+/logo-mark.png
+  X-Robots-Tag: noindex
+
+/logo-mark-36.png
+  X-Robots-Tag: noindex
+
+/logo-mark-36.webp
+  X-Robots-Tag: noindex
+
+/og-default.png
+  X-Robots-Tag: noindex
