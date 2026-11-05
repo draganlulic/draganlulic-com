@@ -9,7 +9,7 @@ const description =
 const featured = {
   tag: "E-commerce · AI search revenue",
   number: "$58K+",
-  heading: "Revenue from AI search, year over year",
+  heading: "Revenue from AI search in the last 12 months",
   stats: [
     { value: "+342%", label: "ChatGPT revenue" },
     { value: "+2,430%", label: "Gemini revenue" },
@@ -351,16 +351,16 @@ const jsonLd = [
             <span class="text-xs font-semibold uppercase tracking-wider text-muted">{featured.tag}</span>
             <p class="stat-number mt-4 lg:text-6xl">{featured.number}</p>
             <h3 class="mt-3 text-2xl leading-snug">{featured.heading}</h3>
-            <dl class="mt-5 flex flex-wrap gap-x-6 gap-y-3 border-y border-line py-4">
+            <dl class="mt-5 divide-y divide-line border-t border-line">
               {featured.stats.map((s) => (
-                <div class="flex flex-col-reverse">
-                  <dt class="text-xs text-muted">{s.label}</dt>
-                  <dd class="text-xl font-extrabold tracking-tight">{s.value}</dd>
+                <div class="flex items-baseline justify-between gap-4 py-3">
+                  <dt class="text-sm text-muted lg:text-base">{s.label}</dt>
+                  <dd class="text-2xl font-extrabold tracking-tight lg:text-3xl">{s.value}</dd>
                 </div>
               ))}
             </dl>
-            <a href="#result-featured" class="result-trigger relative mt-6 h-64 overflow-hidden bg-white md:h-80 lg:h-auto lg:min-h-72 lg:flex-1" aria-label={`Enlarge: ${featured.heading}`}>
-              <img src={featured.image} alt={featured.alt} width={featured.imageWidth} height={featured.imageHeight} loading="lazy" decoding="async" class="absolute inset-0 h-full w-full rounded object-contain" />
+            <a href="#result-featured" class="result-trigger relative -mx-7 mt-6 h-64 overflow-hidden border-y border-line bg-white md:h-80 lg:-mx-8 lg:h-auto lg:min-h-72 lg:flex-1" aria-label={`Enlarge: ${featured.heading}`}>
+              <img src={featured.image} alt={featured.alt} width={featured.imageWidth} height={featured.imageHeight} loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-contain p-3" />
             </a>
             <p class="mt-6 text-sm leading-relaxed text-muted lg:text-base">{featured.text}</p>
             {/* Enable when the case study pages are written: */}
