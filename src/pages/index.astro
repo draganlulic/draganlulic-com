@@ -5,7 +5,36 @@ const title = "Dragan Lulić | Senior SEO & AI Search Specialist";
 const description =
   "Senior SEO and AI search (AEO/GEO) specialist with 8+ years of experience growing organic traffic for SaaS, e-commerce and iGaming brands.";
 
+// Featured result: large card spanning two rows next to the 2x2 grid on desktop.
+const featured = {
+  tag: "E-commerce · AI search revenue",
+  number: "$58K+",
+  heading: "Revenue from AI search, year over year",
+  stats: [
+    { value: "+342%", label: "ChatGPT revenue" },
+    { value: "+2,430%", label: "Gemini revenue" },
+    { value: "+142%", label: "Perplexity revenue" },
+  ],
+  text: "Turned AI visibility into sales. Referrals from ChatGPT, Perplexity, Gemini and Claude now drive real revenue, with ChatGPT alone bringing in $52.9K.",
+  image: "/results/ai-search-revenue-by-source-yoy.webp",
+  imageWidth: 526,
+  imageHeight: 415,
+  alt: "Year over year revenue by AI source: ChatGPT $52,882 (+341.7%), Perplexity $1,963 (+142%), Gemini $1,061 (+2,429.5%), plus Claude and other AI referrals",
+  href: "/case-studies/ecommerce-ai-search-visibility/",
+};
+
 const results = [
+  {
+    tag: "E-commerce · AI search visibility",
+    number: "1,000+",
+    heading: "AI mentions & 500+ cited pages across LLMs",
+    text: "Optimized product and collection pages to drive consistent mentions across ChatGPT, Google AI Overviews, and Gemini. Milestone reached over ~1 year working with this client.",
+    image: "/results/ai-search-visibility.webp",
+    imageWidth: 446,
+    imageHeight: 261,
+    alt: "AI search visibility report: 1K mentions and 563 cited pages across ChatGPT, Google AI Overviews, AI Mode and Gemini",
+    href: "/case-studies/ecommerce-ai-search-visibility/",
+  },
   {
     tag: "iGaming · SEO growth",
     number: "9x",
@@ -19,15 +48,16 @@ const results = [
     href: "/case-studies/igaming-affiliate-9x-organic-growth/",
   },
   {
-    tag: "E-commerce · AI search visibility",
-    number: "1,000+",
-    heading: "AI mentions & 500+ cited pages across LLMs",
-    text: "Optimized product and collection pages to drive consistent mentions across ChatGPT, Google AI Overviews, and Gemini. Milestone reached over ~1 year working with this client.",
-    image: "/results/ai-search-visibility.webp",
-    imageWidth: 446,
-    imageHeight: 261,
-    alt: "AI search visibility report: 1K mentions and 563 cited pages across ChatGPT, Google AI Overviews, AI Mode and Gemini",
-    href: "/case-studies/ecommerce-ai-search-visibility/",
+    tag: "E-commerce · Site merge & SEO",
+    number: "20x",
+    heading: "More top 3 keywords year over year",
+    text: "Merged two competing stores into one site and owned SEO for the migration, growing top 3 keywords from 21 to 413 and tripling organic traffic year over year.",
+    image: "/results/ecommerce-20x-top-3-keywords.webp",
+    imageSmall: "/results/ecommerce-20x-top-3-keywords-sm.webp",
+    imageWidth: 1032,
+    imageHeight: 183,
+    alt: "Ahrefs year over year overview: 413 keywords in the top 3 (+392), 879 organic keywords (+491), 544 AI Overviews (+534) and 2.6K organic traffic (+1.8K)",
+    href: "/case-studies/ecommerce-store-merge-seo/",
   },
   {
     tag: "SaaS · Migration & redesign",
@@ -314,12 +344,33 @@ const jsonLd = [
     <div class="container-wide">
       <p class="eyebrow mb-3">Case studies</p>
       <h2 class="text-3xl sm:text-4xl">Results from real client work</h2>
-      <!-- Mobile: horizontal scroll-snap carousel (no JS). Desktop: 3-column grid. -->
-      <div class="results-track mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
+      <!-- Mobile: horizontal scroll-snap carousel (no JS). Tablet: featured card full width + 2x2. Desktop: featured card spanning two rows + 2x2. -->
+      <div class="results-track mt-12 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:-mx-8 sm:px-8 md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:col-span-2 md:w-auto lg:col-span-1 lg:row-span-2">
+          <div class="flex flex-1 flex-col p-7 lg:p-8">
+            <span class="text-xs font-semibold uppercase tracking-wider text-muted">{featured.tag}</span>
+            <p class="stat-number mt-4 lg:text-6xl">{featured.number}</p>
+            <h3 class="mt-3 text-2xl leading-snug">{featured.heading}</h3>
+            <dl class="mt-5 flex flex-wrap gap-x-6 gap-y-3 border-y border-line py-4">
+              {featured.stats.map((s) => (
+                <div class="flex flex-col-reverse">
+                  <dt class="text-xs text-muted">{s.label}</dt>
+                  <dd class="text-xl font-extrabold tracking-tight">{s.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <a href="#result-featured" class="result-trigger relative mt-6 h-64 overflow-hidden bg-white md:h-80 lg:h-auto lg:min-h-72 lg:flex-1" aria-label={`Enlarge: ${featured.heading}`}>
+              <img src={featured.image} alt={featured.alt} width={featured.imageWidth} height={featured.imageHeight} loading="lazy" decoding="async" class="absolute inset-0 h-full w-full rounded object-contain" />
+            </a>
+            <p class="mt-6 text-sm leading-relaxed text-muted lg:text-base">{featured.text}</p>
+            {/* Enable when the case study pages are written: */}
+            {/* <a href={featured.href} class="link mt-6 text-sm">Read the case study</a> */}
+          </div>
+        </article>
         {results.map((r, i) => (
           <article class="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-line bg-white md:w-auto">
             <a href={`#result-${i}`} class="result-trigger flex h-40 items-center justify-center overflow-hidden border-b border-line bg-white p-4 md:h-44" aria-label={`Enlarge: ${r.heading}`}>
-              <img src={r.image} srcset={r.imageSmall ? `${r.imageSmall} 600w, ${r.image} ${r.imageWidth}w` : undefined} sizes={r.imageSmall ? "(min-width: 1152px) 312px, (min-width: 768px) calc(33vw - 72px), calc(85vw - 68px)" : undefined} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading="lazy" decoding="async" class="h-full w-full rounded object-contain" />
+              <img src={r.image} srcset={r.imageSmall ? `${r.imageSmall} 600w, ${r.image} ${r.imageWidth}w` : undefined} sizes={r.imageSmall ? "(min-width: 1152px) 271px, (min-width: 1024px) calc(26vw - 30px), (min-width: 768px) calc(50vw - 76px), calc(85vw - 68px)" : undefined} alt={r.alt} width={r.imageWidth} height={r.imageHeight} loading="lazy" decoding="async" class="h-full w-full rounded object-contain" />
             </a>
             <div class="flex flex-1 flex-col p-7">
               <span class="text-xs font-semibold uppercase tracking-wider text-muted">{r.tag}</span>
@@ -333,6 +384,13 @@ const jsonLd = [
         ))}
       </div>
 
+      <div id="result-featured" class="lightbox" role="dialog" aria-modal="true" aria-label={featured.heading}>
+        <a href="#!" class="lightbox-backdrop" aria-label="Close"></a>
+        <div class="lightbox-inner">
+          <a href="#!" class="lightbox-close" aria-label="Close">&times;</a>
+          <img src={featured.image} alt={featured.alt} loading="lazy" decoding="async" />
+        </div>
+      </div>
       {results.map((r, i) => (
         <div id={`result-${i}`} class="lightbox" role="dialog" aria-modal="true" aria-label={r.heading}>
           <a href="#!" class="lightbox-backdrop" aria-label="Close"></a>
